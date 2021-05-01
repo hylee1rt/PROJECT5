@@ -27,7 +27,9 @@ The heatmaps show that there correlations between some of our variables.
 ![download (3)](https://user-images.githubusercontent.com/66886936/116769500-acc63d80-aa0a-11eb-88c5-b3d50fb14639.png)
 
 
-From the parallel coordinates plane, we can see that most of our data belongs to M2, M3, or M9, and there is a working pattern that we might be able to explore. We will filter out other individuals and keep M2, M3 and M9. We will also standardize the data and work with a table of relative frequencies. 
+From the parallel coordinates plane, we can see that most of our data belongs to M2, M3, or M9, and there is a working pattern that we might be able to explore. 
+
+For further analyses, we will filter out other individuals and keep M2, M3 and M9. We will also standardize the data and work with a table of relative frequencies. 
 ![download (2)](https://user-images.githubusercontent.com/66886936/116769290-f4e46080-aa08-11eb-9834-7f16e3316259.png)
 
 
