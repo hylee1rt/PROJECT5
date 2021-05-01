@@ -34,7 +34,10 @@ From the parallel coordinates plane, we can see that most of our data belongs to
 
 ### PCA
 
-Next we will perform Principle Component Analysis (PCA) on the dataset to see if we could discover anything interesting. 
+Next we will perform Principle Component Analysis (PCA) on the dataset to see if we could discover anything interesting. PCA is a dimensionality-reduction method that is often used to reduce the dimensionality of large data sets, by transforming a large set of variables into a smaller one that still contains most of the information in the large set. The goal of PCA is basically to find an angle where you can project those points down onto a flat piece of paper, in such a way that the variance (or spread) of the data is maximized.
+
+The intuition behind this is that, if we think we might have "clusters" or "groups" in a high-dimensional dataset, we might be able to find a particular angle of view in the high dimensional space, ~smoosh~ the data down onto a 2-d surface and be able to see the clustering or grouping in the data. This can help us decide whether a particular type of model might be useful.
+
 
 ```python
 plt.figure(figsize = [8,8])
@@ -59,4 +62,23 @@ plt.savefig('otus_pca.png', bbox_inches = 'tight')
 plt.show()
 ```
 
-![download (4)](https://user-images.githubusercontent.com/66886936/116769723-49d5a600-aa0c-11eb-9734-84387557dab6.png)
+![download (5)](https://user-images.githubusercontent.com/66886936/116770270-5d830b80-aa10-11eb-9e5a-a2f14d713b90.png)
+
+Another thing to look at is how much variance is explained by each Principal Component. 
+
+```python
+pca.explained_variance_ratio_
+
+array([9.59566288e-01, 2.93070077e-02, 5.99185498e-03, 4.99038685e-03,
+       1.36521106e-04, 7.14345547e-06, 7.97462217e-07, 7.90823233e-33])
+```
+```python
+evr = pca.explained_variance_ratio_
+plt.figure(figsize=(12,6))
+plt.bar(range(1,len(evr)+1), evr)
+plt.xlabel('Principal Component')
+plt.ylabel('% of Variance Explained')
+plt.xticks(range(1,len(evr)+1))
+plt.show()
+```
+![download (6)](https://user-images.githubusercontent.com/66886936/116770424-e189c300-aa11-11eb-83c9-c54c2cab407a.png)
