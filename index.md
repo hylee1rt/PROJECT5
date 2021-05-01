@@ -31,3 +31,31 @@ From the parallel coordinates plane, we can see that most of our data belongs to
 ![download (2)](https://user-images.githubusercontent.com/66886936/116769290-f4e46080-aa08-11eb-9834-7f16e3316259.png)
 
 
+
+### PCA
+
+Next we will perform Principle Component Analysis (PCA) on the dataset to see if we could discover anything interesting. 
+
+```python
+plt.figure(figsize = [8,8])
+
+colors = ['magenta','cyan','red']
+options = ['M2', 'M3', 'M9']
+
+for x in range(len(options)):
+    idx = (otus_Y['Indiv']==options[x])
+    plt.scatter(pca_otus[idx,0],pca_otus[idx,1],
+                edgecolor='k', color = colors[int(x)],alpha=0.5)
+
+m_patch = mpatches.Patch(color='magenta', alpha = 0.6, label='M2')
+c_patch = mpatches.Patch(color='cyan', alpha = 0.6, label='M3')
+r_patch = mpatches.Patch(color='red', alpha = 0.6, label='M9')
+
+plt.xlabel('PC1: '  + str(int(round(pca.explained_variance_ratio_[0]*100))) + '%',fontsize=14)
+plt.ylabel('PC2: ' + str(int(round(pca.explained_variance_ratio_[1]*100))) + '%',fontsize=14)
+plt.legend(handles=[m_patch, c_patch, r_patch], labels = options)
+plt.title("PCA on Bacterial Phyla Abundances by Individual", fontsize=12)
+plt.savefig('otus_pca.png', bbox_inches = 'tight')
+plt.show()
+```
+
