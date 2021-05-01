@@ -64,7 +64,7 @@ plt.show()
 
 ![download (5)](https://user-images.githubusercontent.com/66886936/116770270-5d830b80-aa10-11eb-9e5a-a2f14d713b90.png)
 
-Another thing to look at is how much variance is explained by each Principal Component. 
+Another thing to look at is how much variance is explained by each Principal Component. The first two principle components seem to explain over 98% of our data. 
 
 ```python
 pca.explained_variance_ratio_
@@ -72,13 +72,6 @@ pca.explained_variance_ratio_
 array([9.59566288e-01, 2.93070077e-02, 5.99185498e-03, 4.99038685e-03,
        1.36521106e-04, 7.14345547e-06, 7.97462217e-07, 7.90823233e-33])
 ```
-```python
-evr = pca.explained_variance_ratio_
-plt.figure(figsize=(12,6))
-plt.bar(range(1,len(evr)+1), evr)
-plt.xlabel('Principal Component')
-plt.ylabel('% of Variance Explained')
-plt.xticks(range(1,len(evr)+1))
-plt.show()
-```
 ![download (6)](https://user-images.githubusercontent.com/66886936/116770424-e189c300-aa11-11eb-83c9-c54c2cab407a.png)
+
+
