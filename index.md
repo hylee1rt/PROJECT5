@@ -59,3 +59,4 @@ plt.savefig('otus_pca.png', bbox_inches = 'tight')
 plt.show()
 ```
 
+![download (4)](https://user-images.githubusercontent.com/66886936/116769723-49d5a600-aa0c-11eb-9734-84387557dab6.png)
