@@ -1,6 +1,6 @@
-For this project, we will be exploring dimensionality reduction methods and clustering techniques on high dimensional microbiome communities and tumor biopsy datasets. The first dataset we will work with is an adaptation of the data from the 2010 Fierer et al. paper, which can be found at (https://www.pnas.org/content/107/14/6477).
-
 ## Phylum-level Clustering Analysis on Skin Microbial Communities
+
+For this project, we will be exploring dimensionality reduction methods and clustering techniques on high dimensional microbiome communities and tumor biopsy datasets. The first dataset we will work with is an adaptation of the data from the 2010 Fierer et al. paper, which can be found at (https://www.pnas.org/content/107/14/6477).
 
 First, we will import and preprocess our data. 
 
