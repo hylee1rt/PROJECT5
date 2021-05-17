@@ -1,4 +1,4 @@
-## Phylum-level Clustering Analysis on Skin Microbial Communities
+# Phylum-level Clustering Analysis on Skin Microbial Communities
 
 For this project, we will be exploring dimensionality reduction methods and clustering techniques on high dimensional microbiome communities and tumor biopsy datasets. The first dataset we will work with is an adaptation of the data from the 2010 Fierer et al. paper, which can be found at (https://www.pnas.org/content/107/14/6477).
 
@@ -76,6 +76,19 @@ array([9.59566288e-01, 2.93070077e-02, 5.99185498e-03, 4.99038685e-03,
 ```
 ![download (6)](https://user-images.githubusercontent.com/66886936/116770424-e189c300-aa11-11eb-83c9-c54c2cab407a.png)
 
-# Clustering 
+## Clustering 
 
+### Agglomerative Heirarchical Clustering
+
+AHC works by starting off with each data point in its own cluster. Next, beginning with a distance of zero, we gradually increase the distance, and when two clusters (which may only contain one point initially) fall within that distance of each other, they are merged into a single cluster. The "distance between clusters" depends on the type of linkage being used. This process continues until all the data has been merged into a single cluster. The result of this type of clustering can be summarized using dendrograms, which can then be inspected to determine the optimal number of clusters. We can try different types of linkages to compare, and it looks like our data might have two or four clusters from our dendograms. We can compare the dendograms and the results of our four different linkage types. "Complete" and "ward" linkage types had the highest accuracy, and if we take a look at a confusion matrix, we can see that the "single" and "average" linkages were not able to detect 3 clusters, while "complete" and "Ward" linakges did. 
+
+|Linkage                        |                        |Accuracy|
+|:--------------------------------:|:--------------------:|:-----:|
+|single                      |![download (6)](https://user-images.githubusercontent.com/66886936/118550332-8dc5ec00-b72a-11eb-91c0-a4d3ae49c0aa.png)|0.68|
+|average                        |![download (7)](https://user-images.githubusercontent.com/66886936/118550377-99191780-b72a-11eb-8d2d-ce476c6036b5.png)|0.673|
+|complete                       |![download (8)](https://user-images.githubusercontent.com/66886936/118550420-a7673380-b72a-11eb-98a6-8dc58734a6c2.png)|0.75|
+|ward                        |![download (9)](https://user-images.githubusercontent.com/66886936/118550460-b4842280-b72a-11eb-9ea8-df1c5f1ba0d1.png)|0.75|
+
+
+However, since we already know how many clusters there are (there are 3 individuals in our data), we will specify the number of clusters. 
 
