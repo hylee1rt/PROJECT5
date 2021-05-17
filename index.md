@@ -86,14 +86,10 @@ We can try different types of linkages to compare, and it looks like our data mi
 
 |Linkage |     Dendogram        |Confusion Matrix| Accuracy|
 |:------:|:--------------------:|:-----:|:-----:|
-|Single  |![download (6)](https://user-images.githubusercontent.com/66886936/118550332-8dc5ec00-b72a-11eb-91c0-a4d3ae49c0aa.png)|<img width="85" alt="single" src="https://user-images.githubusercontent.com/66886936/118563801-3c732800-b73d-11eb-8ba0-561e21e1b4f0.png">
-|0.68|
-|Average |![download (7)](https://user-images.githubusercontent.com/66886936/118550377-99191780-b72a-11eb-8d2d-ce476c6036b5.png)|<img width="85" alt="average" src="https://user-images.githubusercontent.com/66886936/118564059-a25faf80-b73d-11eb-9556-7f723cce8e9c.png">
-|0.67|
-|Complete |![download (8)](https://user-images.githubusercontent.com/66886936/118550420-a7673380-b72a-11eb-98a6-8dc58734a6c2.png)|<img width="93" alt="complete" src="https://user-images.githubusercontent.com/66886936/118564737-d9829080-b73e-11eb-9964-90f750f3b7b6.png">
-|0.75|
-|Ward     |![download (9)](https://user-images.githubusercontent.com/66886936/118550460-b4842280-b72a-11eb-9ea8-df1c5f1ba0d1.png)|<img width="91" alt="ward" src="https://user-images.githubusercontent.com/66886936/118564831-059e1180-b73f-11eb-9285-b1f03877f4d7.png">
-|0.75|
+|Single  |![download (6)](https://user-images.githubusercontent.com/66886936/118550332-8dc5ec00-b72a-11eb-91c0-a4d3ae49c0aa.png)|<img width="85" alt="single" src="https://user-images.githubusercontent.com/66886936/118563801-3c732800-b73d-11eb-8ba0-561e21e1b4f0.png">|0.68|
+|Average |![download (7)](https://user-images.githubusercontent.com/66886936/118550377-99191780-b72a-11eb-8d2d-ce476c6036b5.png)|<img width="85" alt="average" src="https://user-images.githubusercontent.com/66886936/118564059-a25faf80-b73d-11eb-9556-7f723cce8e9c.png">|0.67|
+|Complete |![download (8)](https://user-images.githubusercontent.com/66886936/118550420-a7673380-b72a-11eb-98a6-8dc58734a6c2.png)|<img width="93" alt="complete" src="https://user-images.githubusercontent.com/66886936/118564737-d9829080-b73e-11eb-9964-90f750f3b7b6.png">|0.75|
+|Ward     |![download (9)](https://user-images.githubusercontent.com/66886936/118550460-b4842280-b72a-11eb-9ea8-df1c5f1ba0d1.png)|<img width="91" alt="ward" src="https://user-images.githubusercontent.com/66886936/118564831-059e1180-b73f-11eb-9285-b1f03877f4d7.png">|0.75|
 
 
 However, since we already know how many clusters there are (there are 3 individuals in our data), we will specify the number of clusters. Using 3 as the number of clusters and the linkage type "complete," we can achieve a 75% accuracy with this clustering method. 
