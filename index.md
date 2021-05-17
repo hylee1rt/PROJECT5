@@ -90,5 +90,12 @@ AHC works by starting off with each data point in its own cluster. Next, beginni
 |Ward                        |![download (9)](https://user-images.githubusercontent.com/66886936/118550460-b4842280-b72a-11eb-9ea8-df1c5f1ba0d1.png)|0.75|
 
 
-However, since we already know how many clusters there are (there are 3 individuals in our data), we will specify the number of clusters. 
+However, since we already know how many clusters there are (there are 3 individuals in our data), we will specify the number of clusters. Using 3 as the number of clusters and the linkage type "complete," we can achieve a 75% accuracy with this clustering method. 
+
+
+## Classification
+
+### k-nearest neighbors (KNN)
+
+
 
