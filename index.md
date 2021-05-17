@@ -82,14 +82,18 @@ array([9.59566288e-01, 2.93070077e-02, 5.99185498e-03, 4.99038685e-03,
 
 AHC works by starting off with each data point in its own cluster. Beginning with a distance of zero, we gradually increase the distance, and when two clusters (which may only contain one point initially) fall within that distance of each other, they are merged into a single cluster. The "distance between clusters" depends on the type of linkage being used. This process continues until all the data has been merged into a single cluster. The result of this type of clustering can be summarized using dendrograms, which can then be inspected to determine the optimal number of clusters. 
 
-We can try different types of linkages to compare, and it looks like our data might have two or four clusters from our dendograms. We can compare the dendograms and the accuracies of our four different linkage types. "Complete" and "ward" linkage types had the highest accuracy, and if we take a look at a confusion matrix, we can see that the "single" and "average" linkages were only able to detect two clusters. 
+We can try different types of linkages to compare, and it looks like our data might have two or four clusters from our dendograms. We can compare the dendograms and the accuracies of our four different linkage types. "Complete" and "ward" linkage types had the highest accuracy, and if we take a look at the confusion matrices, we can see that the "single" and "average" linkages were only able to detect two clusters. 
 
 |Linkage |     Dendogram        |Confusion Matrix| Accuracy|
 |:------:|:--------------------:|:-----:|:-----:|
-|Single  |![download (6)](https://user-images.githubusercontent.com/66886936/118550332-8dc5ec00-b72a-11eb-91c0-a4d3ae49c0aa.png)|:-----:|0.68|
-|Average |![download (7)](https://user-images.githubusercontent.com/66886936/118550377-99191780-b72a-11eb-8d2d-ce476c6036b5.png)|:--:|0.67|
-|Complete |![download (8)](https://user-images.githubusercontent.com/66886936/118550420-a7673380-b72a-11eb-98a6-8dc58734a6c2.png)|:---:|0.75|
-|Ward     |![download (9)](https://user-images.githubusercontent.com/66886936/118550460-b4842280-b72a-11eb-9ea8-df1c5f1ba0d1.png)|:---:|0.75|
+|Single  |![download (6)](https://user-images.githubusercontent.com/66886936/118550332-8dc5ec00-b72a-11eb-91c0-a4d3ae49c0aa.png)|<img width="85" alt="single" src="https://user-images.githubusercontent.com/66886936/118563801-3c732800-b73d-11eb-8ba0-561e21e1b4f0.png">
+|0.68|
+|Average |![download (7)](https://user-images.githubusercontent.com/66886936/118550377-99191780-b72a-11eb-8d2d-ce476c6036b5.png)|<img width="85" alt="average" src="https://user-images.githubusercontent.com/66886936/118564059-a25faf80-b73d-11eb-9556-7f723cce8e9c.png">
+|0.67|
+|Complete |![download (8)](https://user-images.githubusercontent.com/66886936/118550420-a7673380-b72a-11eb-98a6-8dc58734a6c2.png)|<img width="93" alt="complete" src="https://user-images.githubusercontent.com/66886936/118564737-d9829080-b73e-11eb-9964-90f750f3b7b6.png">
+|0.75|
+|Ward     |![download (9)](https://user-images.githubusercontent.com/66886936/118550460-b4842280-b72a-11eb-9ea8-df1c5f1ba0d1.png)|<img width="91" alt="ward" src="https://user-images.githubusercontent.com/66886936/118564831-059e1180-b73f-11eb-9285-b1f03877f4d7.png">
+|0.75|
 
 
 However, since we already know how many clusters there are (there are 3 individuals in our data), we will specify the number of clusters. Using 3 as the number of clusters and the linkage type "complete," we can achieve a 75% accuracy with this clustering method. 
