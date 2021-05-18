@@ -165,7 +165,8 @@ Accuracy = 0.88
 Here, we have an accuracy of 88%. The resulting confusion matrix shows that some 1's were classified as 2, and some 2's were classified as 1, but the model was able to classify all 0's correctly. The pca plot below of our test data shows that group 1 and 2 are closer together than group 0, which can be explained by how our models had trouble distinguishing labels 1 and 2. 
 
 
-![download (4)](https://user-images.githubusercontent.com/66886936/118599203-28e7b180-b77d-11eb-8869-c7149048ec30.png)
+![download (7)](https://user-images.githubusercontent.com/66886936/118599499-9bf12800-b77d-11eb-9472-ab818b740037.png)
+
 
 
 We also note that for the purpose of getting the accuracy, the individual labels were changed to 0,1 and 2. 0 Corresponds to 'M2', 1 corresponds to 'M3', and 2 corresponds to 'M9'. 
@@ -215,6 +216,7 @@ Accuracy = 0.86
  2          0  2  5, 0.8571428571428571)
 ```
 
-![download (6)](https://user-images.githubusercontent.com/66886936/118599309-53d20580-b77d-11eb-86af-cd1550187219.png)
+![download (8)](https://user-images.githubusercontent.com/66886936/118599565-baefba00-b77d-11eb-94d7-0341fd4c743e.png)
+
 
 
