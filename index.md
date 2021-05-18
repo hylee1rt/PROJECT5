@@ -1,6 +1,6 @@
 # Phylum-level Clustering Analysis on Skin Microbial Communities
 
-For this project, we will be exploring dimensionality reduction methods and clustering techniques on high dimensional microbiome communities. The dataset we will work with is an adaptation of the data from the 2010 Fierer et al. paper, which can be found at (https://www.pnas.org/content/107/14/6477).
+For this project, we will be exploring dimensionality reduction methods and clustering techniques on high dimensional microbiome communities. The dataset we will work with is an adaptation of the data from the 2010 Fierer et al. paper, which can be found at (https://www.pnas.org/content/107/14/6477). 
 
 First, we will import and preprocess our data. 
 
@@ -66,7 +66,7 @@ plt.show()
 
 ![download (5)](https://user-images.githubusercontent.com/66886936/116770270-5d830b80-aa10-11eb-9e5a-a2f14d713b90.png)
 
-Another thing to look at is how much variance is explained by each Principal Component. The first two principle components seem to explain over 98% of our data. 
+Another thing to look at is how much variance is explained by each Principal Component. The first two principle components seem to explain over 98% of our data.  
 
 ```python
 pca.explained_variance_ratio_
@@ -75,6 +75,8 @@ array([9.59566288e-01, 2.93070077e-02, 5.99185498e-03, 4.99038685e-03,
        1.36521106e-04, 7.14345547e-06, 7.97462217e-07, 7.90823233e-33])
 ```
 ![download (6)](https://user-images.githubusercontent.com/66886936/116770424-e189c300-aa11-11eb-83c9-c54c2cab407a.png)
+
+We will take a look at a couple machine learning techniques that can be used to test how well those methods detect and identify the significantly different groups in the dataset as well as predict which class an instance of the data belongs to. In our case, we will see how well the models identify the three individuals using the relative frequency of each of the microbiome communities collected. We will also explore if and how accurately a model can classify a data point to the right individual.
 
 ## Clustering 
 
