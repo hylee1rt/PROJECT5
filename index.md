@@ -221,7 +221,7 @@ Accuracy = 0.86
 
 ## Conclusion
 
-We have explored a clustering method called Agglomerative Heirarchical Clustering, and three classification methods called KNN, Gaussian Naive-Bayes, and Random Forest. Their performances are compared in the figure below, where we can see that classification yielded better results for this dataset. Among the classification methods, we have Gaussian Naive-Bayes that performed the best with 0.91 accuracy. These are rough calculations, due to the fact that there were only so many data poins to train and test the model with. 
+We have explored a clustering method called Agglomerative Heirarchical Clustering, and three classification methods called KNN, Gaussian Naive-Bayes, and Random Forest on our skin microbial data. Their performances are compared in the figure below, where we can see that classification yielded better results for this dataset. Among the classification methods, we have Gaussian Naive-Bayes that performed the best with 0.91 accuracy. These are rough calculations, due to the fact that there were only so many data poins to train and test the model with. We also noted that the models had a difficult time differentiating individuals M2 and M3, since  Further analysis and tuning of hyperparameters for these models can achieve better results, which would indicate that certain models can learn to distinguish different patterns of microbial communities in individuals!
 
 |Model       | Accuracy   | 
 |:----------:|:------------:|
