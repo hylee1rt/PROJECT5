@@ -172,7 +172,7 @@ We also note that for the purpose of getting the accuracy, the individual labels
 
 ### Gaussian Naive-Bayes
 
-Naive Bayes are a group of supervised machine learning classification algorithms based on the Bayes theorem. It is a simple classification technique, but has high functionality. They find use when the dimensionality of the inputs is high. Gaussian Naive Bayes is a variant of Naive Bayes that follows Gaussian normal distribution and supports continuous data. One assumption taken is the strong independence assumptions between the features. These classifiers assume that the value of a particular feature is independent of the value of any other feature. 
+Naive Bayes are a group of supervised machine learning classification algorithms based on the Bayes theorem. It is a simple classification technique, but has high functionality. They find use when the dimensionality of the inputs is high. Gaussian Naive Bayes is a variant of Naive Bayes that follows Gaussian normal distribution and supports continuous data. One assumption taken is the strong independence assumptions between the features. These classifiers assume that the value of a particular feature is independent of the value of any other feature. We will import GaussianNB from the sklearn library and fit and predict our data. 
 
 ```python
 from sklearn.naive_bayes import GaussianNB
@@ -188,6 +188,10 @@ Accuracy = 0.91
  1           0  26   1
  2           0   6  29, 0.9134615384615384)
 ```
+
+This gaussian naive-bayes model outperformed the previous models we saw. The TSNE plot below visualizes the GaussianNB model, and unlike AHC, we can see that there are three clearer clusters without any green points where the purple ones are. 
+
+![download (3)](https://user-images.githubusercontent.com/66886936/118595099-76adeb00-b778-11eb-9fb3-a971c1975448.png)
 
 
 
