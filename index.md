@@ -92,12 +92,24 @@ We can try different types of linkages to compare, and it looks like our data mi
 |Ward     |![download (9)](https://user-images.githubusercontent.com/66886936/118550460-b4842280-b72a-11eb-9ea8-df1c5f1ba0d1.png)|<img width="91" alt="ward" src="https://user-images.githubusercontent.com/66886936/118564831-059e1180-b73f-11eb-9285-b1f03877f4d7.png">|0.75|
 
 
-However, since we already know how many clusters there are (there are 3 individuals in our data), we will specify the number of clusters. Using 3 as the number of clusters and the linkage type "complete," we can achieve a 75% accuracy with this clustering method. 
+However, since we already know how many clusters there are (there are 3 individuals in our data), we will specify the number of clusters. Using 3 as the number of clusters and the linkage type "complete," we can achieve a 75% accuracy with this clustering method. This means that our model was able to correctly group the data into three clusters that belong to three different individuals 75% of the time. 
+
+```python
+from sklearn.cluster import AgglomerativeClustering as AC
+from sklearn.metrics import accuracy_score
+
+n = 3
+ac = AC(n_clusters=n,linkage='complete')
+ac_cl = ac.fit_predict(X)
+accuracy = accuracy_score(y,ac_cl)
+print(accuracy)
+0.75
+```
 
 
 ## Classification
 
 ### k-nearest neighbors (KNN)
 
-Classification refers to types of supervised learning. With supervised learning, the model is being provided with information about what the correct answers are during the model training process. 
+Classification refers to types of supervised learning. With supervised learning, the model is being provided with information about what the correct answers are during the model training process. Since our data has the labels for each individual (we know who each record of microbiome communities belongs to), we can explore how classification methods perform on our dataset. KNN classification works by runs a mathematical formula to compute the distance between each data point and the test data, selecting the specified number points (K) closest to it, then finds the probability of these points being similar to the test data and classifies it based on which points share the highest probabilities.
 
