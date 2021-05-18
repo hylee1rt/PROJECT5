@@ -191,7 +191,27 @@ Accuracy = 0.91
 
 This gaussian naive-bayes model outperformed the previous models we saw. The TSNE plot below visualizes the GaussianNB model, and unlike AHC, we can see that there are three clearer clusters without any green points where the purple ones are. 
 
-![download (3)](https://user-images.githubusercontent.com/66886936/118595099-76adeb00-b778-11eb-9fb3-a971c1975448.png)
+![download (3)](https://user-images.githubusercontent.com/66886936/118595099-76adeb00-b778-11eb-9fb3-a971c1975448.png) 
+
+### Random Forest Classifier 
+
+A random forest is an example of an ensemble model, which is simply a model that consists of many individual models. For a random forest, each individual model is a decision tree. To generate a prediction from a random forest, we will take the average (or majority vote) from each tree in the forest.
+
+```python
+from sklearn.ensemble import RandomForestClassifier
+model = RandomForestClassifier(random_state=1234, max_depth=5, n_estimators = 1000)
+Xtrain,Xtest,ytrain,ytest = tts(X, y, test_size=0.2, random_state=2021)
+model.fit(Xtrain, ytrain);
+rf_cl = model.predict(Xtest)
+CompareClasses(ytest,rf_cl)
+
+Accuracy = 0.86
+(Actual     0  1  2
+ Predicted         
+ 0          9  0  0
+ 1          0  4  1
+ 2          0  2  5, 0.8571428571428571)
+```
 
 
 
