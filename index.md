@@ -221,12 +221,12 @@ Accuracy = 0.86
 
 ## Conclusion
 
-We have explored a clustering method called Agglomerative Heirarchical Clustering, and the best result we got from that model was 0.75. Then we 
+We have explored a clustering method called Agglomerative Heirarchical Clustering, and three classification methods called KNN, Gaussian Naive-Bayes, and Random Forest. Their performances are compared in the figure below, where we can see that classification yielded better results for this dataset. Among the classification methods, we have Gaussian Naive-Bayes that performed the best with 0.91 accuracy. These are rough calculations, due to the fact that there were only so many data poins to train and test the model with. 
 
 |Model       | Accuracy   | 
 |:----------:|:------------:|
 | Agglomerate Heirarchical Clustering| 0.75 |
-| k-nearest neighbors| 0.88 |
+| k-Nearest Neighbors| 0.88 |
 | Gaussian Naive-Bayes| 0.91 |
 | Random Forest| 0.86 |
 
