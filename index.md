@@ -165,7 +165,8 @@ Accuracy = 0.88
 Here, we have an accuracy of 88%. The resulting confusion matrix shows that some 1's were classified as 2, and some 2's were classified as 1, but the model was able to classify all 0's correctly. The pca plot below of our test data shows that group 1 and 2 are closer together than group 0, which can be explained by how our models had trouble distinguishing labels 1 and 2. 
 
 
-![download (1)](https://user-images.githubusercontent.com/66886936/118585288-920ffa80-b766-11eb-828b-b3837e92bd86.png)
+![download (4)](https://user-images.githubusercontent.com/66886936/118599203-28e7b180-b77d-11eb-8869-c7149048ec30.png)
+
 
 We also note that for the purpose of getting the accuracy, the individual labels were changed to 0,1 and 2. 0 Corresponds to 'M2', 1 corresponds to 'M3', and 2 corresponds to 'M9'. 
 
@@ -191,7 +192,8 @@ Accuracy = 0.91
 
 This gaussian naive-bayes model outperformed the previous models we saw. The TSNE plot below visualizes the GaussianNB model, and unlike AHC, we can see that there are three clearer clusters without any green points where the purple ones are. 
 
-![download (3)](https://user-images.githubusercontent.com/66886936/118595099-76adeb00-b778-11eb-9fb3-a971c1975448.png) 
+![download (5)](https://user-images.githubusercontent.com/66886936/118599283-4ae13400-b77d-11eb-8055-5a3bbcbedb8e.png)
+
 
 ### Random Forest Classifier 
 
@@ -213,5 +215,6 @@ Accuracy = 0.86
  2          0  2  5, 0.8571428571428571)
 ```
 
+![download (6)](https://user-images.githubusercontent.com/66886936/118599309-53d20580-b77d-11eb-86af-cd1550187219.png)
 
 
