@@ -92,7 +92,7 @@ We can try different types of linkages to compare, and it looks like our data mi
 |Ward     |![download (9)](https://user-images.githubusercontent.com/66886936/118550460-b4842280-b72a-11eb-9ea8-df1c5f1ba0d1.png)|<img width="91" alt="ward" src="https://user-images.githubusercontent.com/66886936/118564831-059e1180-b73f-11eb-9285-b1f03877f4d7.png">|0.75|
 
 
-However, since we already know how many clusters there are (there are 3 individuals in our data), we will specify the number of clusters. Using 3 as the number of clusters and the linkage type "complete," we can achieve a 75% accuracy with this clustering method. This means that our model was able to correctly group the data into three clusters that belong to three different individuals 75% of the time. 
+However, since we already know how many clusters there are (there are 3 individuals in our data), we will specify the number of clusters. Using 3 as the number of clusters and the linkage type "complete," we can achieve a 75% accuracy with this clustering method. This means that our model was able to correctly group the data into three clusters that belong to three different individuals 75% of the time. We can also see the incorrectly clustered data points from the confusion matrices. 
 
 ```python
 from sklearn.cluster import AgglomerativeClustering as AC
@@ -113,3 +113,46 @@ print(accuracy)
 
 Classification refers to types of supervised learning. With supervised learning, the model is being provided with information about what the correct answers are during the model training process. Since our data has the labels for each individual (we know who each record of microbiome communities belongs to), we can explore how classification methods perform on our dataset. KNN classification works by runs a mathematical formula to compute the distance between each data point and the test data, selecting the specified number points (K) closest to it, then finds the probability of these points being similar to the test data and classifies it based on which points share the highest probabilities.
 
+For this method, we will split our data into training and test sets to compare the predictions to the actual classes. 
+
+```python
+from sklearn.neighbors import KNeighborsClassifier as KNN
+from sklearn.model_selection import train_test_split as tts
+
+def CompareClasses(actual, predicted, names=None):
+    '''Function returns a confusion matrix, and overall accuracy given:
+            Input:  actual - a list of actual classifications
+                    predicted - a list of predicted classifications
+                    names (optional) - a list of class names
+    '''
+    
+    import pandas as pd
+    accuracy = sum(actual==predicted)/actual.shape[0]
+    classes = pd.DataFrame(columns=['Actual','Predicted'])
+    classes['Actual'] = actual
+    classes['Predicted'] = predicted
+    conf_mat = pd.crosstab(classes['Predicted'],classes['Actual'])
+    # Relabel the rows/columns if names was provided
+    if type(names) != type(None):
+        conf_mat.index=y_names
+        conf_mat.index.name='Predicted'
+        conf_mat.columns=y_names
+        conf_mat.columns.name = 'Actual'
+    print('Accuracy = ' + format(accuracy, '.2f'))
+    return conf_mat, accuracy
+    
+    
+Xtrain,Xtest,ytrain,ytest = tts(X, y, test_size=0.25, random_state=2021)
+
+knn = KNN(n_neighbors=12)
+knn.fit(Xtrain,ytrain)
+knn_cl = knn.predict(Xtest)
+CompareClasses(ytest,knn_cl)
+
+Accuracy = 0.88
+(Actual      0  1  2
+ Predicted          
+ 0          13  0  0
+ 1           0  4  1
+ 2           0  2  6, 0.8846153846153846)
+```
