@@ -162,4 +162,14 @@ Accuracy = 0.88
  2           0  2  6, 0.8846153846153846)
 ```
 
-Here, we have an accuracy of 88%. The resulting confusion matrix shows that some 1's were classified as 2, and some 2's were classified as 1. The model was able to classify all 0's correctly. It seems that both of the models we looked at had trouble distinguishing between label 1 and 2. 
+Here, we have an accuracy of 88%. The resulting confusion matrix shows that some 1's were classified as 2, and some 2's were classified as 1, but the model was able to classify all 0's correctly. The plot below shows that group 1 and 2 are closer together than group 0, which can be explained by how our models had trouble distinguishing labels 1 and 2. 
+
+
+![download (1)](https://user-images.githubusercontent.com/66886936/118585288-920ffa80-b766-11eb-828b-b3837e92bd86.png)
+
+
+
+
+
+
+
