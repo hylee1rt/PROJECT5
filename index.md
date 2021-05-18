@@ -219,4 +219,16 @@ Accuracy = 0.86
 ![download (8)](https://user-images.githubusercontent.com/66886936/118599565-baefba00-b77d-11eb-94d7-0341fd4c743e.png)
 
 
+## Conclusion
+
+We have explored a clustering method called Agglomerative Heirarchical Clustering, and the best result we got from that model was 0.75. Then we 
+
+|Model       | Accuracy   | 
+|:----------:|:------------:|
+| Agglomerate Heirarchical Clustering| 0.75 |
+| k-nearest neighbors| 0.88 |
+| Gaussian Naive-Bayes| 0.91 |
+| Random Forest| 0.86 |
+
+
 
