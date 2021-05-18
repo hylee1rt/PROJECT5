@@ -84,7 +84,7 @@ We will take a look at a couple machine learning techniques that can be used to 
 
 AHC works by starting off with each data point in its own cluster. Beginning with a distance of zero, we gradually increase the distance, and when two clusters (which may only contain one point initially) fall within that distance of each other, they are merged into a single cluster. The "distance between clusters" depends on the type of linkage being used. This process continues until all the data has been merged into a single cluster. The result of this type of clustering can be summarized using dendrograms, which can then be inspected to determine the optimal number of clusters. 
 
-We can try different types of linkages to compare, and it looks like our data might have two or four clusters from our dendograms. We can compare the dendograms and the accuracies of our four different linkage types. "Complete" and "ward" linkage types had the highest accuracy, and if we take a look at the confusion matrices, we can see that the "single" and "average" linkages were only able to detect two clusters. 
+We can try different types of linkages to compare, and it looks like our data might have two or four clusters from our dendograms. We can compare the dendograms and the accuracies of our four different linkage types. "Complete" and "ward" linkage types had the highest accuracy, and if we take a look at the confusion matrices, we can see that the "single" and "average" linkages were only able to detect two clusters. They grouped the points with the label "2" with all the "1"s. In other words, they were not able to detect the third individual labeled "2". 
 
 |Linkage |     Dendogram        |Confusion Matrix| Accuracy|
 |:------:|:--------------------:|:-----:|:-----:|
@@ -107,6 +107,9 @@ accuracy = accuracy_score(y,ac_cl)
 print(accuracy)
 0.75
 ```
+The TSNE plot below visualizes the clusters that our model (n_clusters = 3 and linkage = "complete") predicted, and we can see that there are a couple of green points where all purple points are, as we can also see from the confusion matrix that the model labeled one two of the 0's as 1 and 2. 
+
+![download](https://user-images.githubusercontent.com/66886936/118583999-fb423e80-b763-11eb-93d5-a76cf5e99582.png)
 
 
 ## Classification
@@ -158,3 +161,5 @@ Accuracy = 0.88
  1           0  4  1
  2           0  2  6, 0.8846153846153846)
 ```
+
+Here, we have an accuracy of 88%. The resulting confusion matrix shows that some 1's were classified as 2, and some 2's were classified as 1. The model was able to classify all 0's correctly. It seems that both of the models we looked at had trouble distinguishing between label 1 and 2. 
