@@ -167,9 +167,27 @@ Here, we have an accuracy of 88%. The resulting confusion matrix shows that some
 
 ![download (1)](https://user-images.githubusercontent.com/66886936/118585288-920ffa80-b766-11eb-828b-b3837e92bd86.png)
 
+We also note that for the purpose of getting the accuracy, the individual labels were changed to 0,1 and 2. 0 Corresponds to 'M2', 1 corresponds to 'M3', and 2 corresponds to 'M9'. 
 
 
+### Gaussian Naive-Bayes
 
+Naive Bayes are a group of supervised machine learning classification algorithms based on the Bayes theorem. It is a simple classification technique, but has high functionality. They find use when the dimensionality of the inputs is high. Gaussian Naive Bayes is a variant of Naive Bayes that follows Gaussian normal distribution and supports continuous data. One assumption taken is the strong independence assumptions between the features. These classifiers assume that the value of a particular feature is independent of the value of any other feature. 
+
+```python
+from sklearn.naive_bayes import GaussianNB
+model = GaussianNB()
+model.fit(X, y)
+nb_cl = model.predict(X)
+CompareClasses(y,nb_cl)
+
+Accuracy = 0.91
+(Actual      0   1   2
+ Predicted            
+ 0          40   1   1
+ 1           0  26   1
+ 2           0   6  29, 0.9134615384615384)
+```
 
 
 
